@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+/* ===============================
+   Global Theme (Dr. Maya Reynolds)
+   =============================== */
+
+:root {
+  /* Backgrounds */
+  --bg-primary: #f5f8f9;     /* soft blue-white */
+  --bg-secondary: #e3eef2;   /* light coastal blue */
+  --bg-accent: #6ba3b8;      /* ocean blue */
+  --bg-dark: #2f4a5a;        /* deep navy */
+
+  /* Text */
+  --text-primary: #2f4a5a;
+  --text-muted: #5f7d8c;
+  --text-light: #ffffff;
+
+  /* Borders */
+  --border-main: #6ba3b8;
+}
+
+/* ===============================
+   Base Styles
+   =============================== */
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+
+  font-family: var(--font-inter), system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===============================
+   Links
+   =============================== */
+
+a {
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--bg-accent);
+}
+
+/* ===============================
+   Utilities
+   =============================== */
+
+@layer utilities {
+  /* FAQ Icon Animation */
+  .rotate-y-0 {
+    transform: rotateY(0deg);
+  }
+
+  .rotate-y-90 {
+    transform: rotateY(90deg);
+  }
+
+  /* Soft Shadow */
+  .soft-shadow {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  }
+
+  /* Smooth Section Reveal */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+  }
+
+  .fade-up.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
